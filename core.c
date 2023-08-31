@@ -265,7 +265,7 @@ void update() {
                     int i2 = (i+ri+height)%height;
                     int j2 = (j+rj+width)%width;
                     if (temp[i2][j2].type == NONE && aquarium[i2][j2].type == NONE){
-                        //еду и возраст уже поменяли
+                        //ГҐГ¤Гі ГЁ ГўГ®Г§Г°Г Г±ГІ ГіГ¦ГҐ ГЇГ®Г¬ГҐГ­ГїГ«ГЁ
 
                         temp[i2][j2].type=SHARK;
                         temp[i2][j2].food=temp[i][j].food-1;
@@ -321,8 +321,8 @@ void update() {
                     for (int i2 = (i-dist_move_fish+height)%height; i2 != (i+dist_move_fish+1)%height; i2 = (i2+1)%height)
                         for (int j2 = (j-dist_move_shark+width)%width; j2 != (j+dist_move_fish+1)%width; j2 = (j2+1)%width) {
                             dist = get_dist1(nearest_fish, i2, j2);
-                            //проверить второе условие, я чет туплю
-                            //и зациклить условие
+                            //ГЇГ°Г®ГўГҐГ°ГЁГІГј ГўГІГ®Г°Г®ГҐ ГіГ±Г«Г®ГўГЁГҐ, Гї Г·ГҐГІ ГІГіГЇГ«Гѕ
+                            //ГЁ Г§Г Г¶ГЁГЄГ«ГЁГІГј ГіГ±Г«Г®ГўГЁГҐ
                             if (temp[i2][j2].type == NONE && (aquarium[i2][j2].type == NONE || aquarium[i2][j2].type == FISH) && dist < get_dist(new_pos, nearest_fish) && dist!=0) {
                                 new_pos.i = i2;
                                 new_pos.j = j2;
@@ -442,7 +442,7 @@ void update() {
                     int i2 = (i+ri+height)%height;
                     int j2 = (j+rj+width)%width;
                     if (temp[i2][j2].type == NONE && (ri!=i || rj!=j) && aquarium[i2][j2].type == NONE){
-                        //еду и возраст уже поменяли
+                        //ГҐГ¤Гі ГЁ ГўГ®Г§Г°Г Г±ГІ ГіГ¦ГҐ ГЇГ®Г¬ГҐГ­ГїГ«ГЁ
                         temp[i2][j2].type=FISH;
                         temp[i2][j2].food=temp[i][j].food-1;
                         temp[i2][j2].age=temp[i][j].age+1;
